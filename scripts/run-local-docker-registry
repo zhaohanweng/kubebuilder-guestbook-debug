@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+NAME='registry'
+
+CURR=`docker ps --filter "name=${NAME}" -q`
+if [ ! -z $CURR ]; then
+  echo "registry already running"
+  exit 0
+fi
+
+docker run -d -p 5000:5000 --restart=always --name ${NAME} registry:2
