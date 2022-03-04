@@ -131,3 +131,5 @@ rm -rf $$TMP_DIR ;\
 endef
 
 deploy-local: docker-build docker-push deploy
+kubectl scale --replicas=0 deployment guestbook-controller-manager -n guestbook-system
+kubectl scale --replicas=1 deployment guestbook-controller-manager -n guestbook-system

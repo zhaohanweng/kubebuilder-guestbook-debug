@@ -18,18 +18,15 @@ package v1
 
 import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 )
-
-// EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
-// NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
 // GuestbookSpec defines the desired state of Guestbook
 type GuestbookSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
-
-	// Foo is an example field of Guestbook. Edit guestbook_types.go to remove/update
 	Foo string `json:"foo,omitempty"`
+
+	// Adding this field in spec breaks
+	Resources []unstructured.Unstructured `json:"resources"`
 }
 
 // GuestbookStatus defines the observed state of Guestbook

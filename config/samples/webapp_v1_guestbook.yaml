@@ -4,3 +4,10 @@ metadata:
   name: guestbook-sample
 spec:
   foo: test
+  resources:
+    - apiVersion: v1
+      kind: ConfigMap
+      metadata:
+        name: cfgmap
+      data:
+        env: dev
